@@ -40,10 +40,10 @@ onMounted(() => {
 
   <div class="list">
 
-    <app-blue-print-card  :class="['item', {'active': isActive(0)}]" text-color="var(--primary-color)" background-gradient="linear-gradient(135deg, #d4d1de, #d4d1de, var(--luiknatie-rood), #d4d1de)"  phone-gradient="linear-gradient(180deg, #d4d1de, #d4d1de, var(--luiknatie-rood), #d4d1de)">
+    <app-blue-print-card  :class="['item', {'active': isActive(0)}]" text-color="var(--primary-color)" background-gradient="linear-gradient(135deg, #d4d1de, #d4d1de, var(--luiknatie-rood), #d4d1de)"  phone-gradient="linear-gradient(180deg, #d4d1de, #d4d1de, #d4d1de, var(--luiknatie-rood), #d4d1de)">
       <template v-slot:text>
         <h2 style="color: var(--luiknatie-rood)">Driver App</h2>
-        <p>This freelance project is an Android app for a major company, designed to digitize and simplify truck drivers' workloads. Built with React Native (frontend) and Laravel (backend), it features live maps, real-time tracking, WebSockets, and API calls. Our agile team of three focuses on efficient code and a clear, user-friendly interface.</p>
+<p>This freelance Android app simplifies truck drivers' workloads for a major company. Built with React Native (frontend) and Laravel (backend), it includes live maps, real-time tracking, WebSockets, and API calls. Our agile team of three delivers efficient code and a user-friendly interface</p>
         <div class="code-lang">
           <p style="--color-code-lang: var(--luiknatie-rood)">React Native</p>
           <p style="--color-code-lang: var(--luiknatie-rood)" >Laravel</p>
@@ -109,7 +109,7 @@ onMounted(() => {
     </button>
     <button @click="next()" id="next" aria-label="Next Slide" title="Next Slide">></button>
   </div>
-  <div class="buttonNav">
+  <div class="buttonNav" style="--quantity: 3">
     <div
         v-for="(item, index) in items"
         :key="index"
@@ -189,7 +189,7 @@ onMounted(() => {
   z-index: 10;
   gap: 0.5rem;
   height: 0.6rem;
-  left: 50%;
+  left: calc(50% - (0.5rem * var(--quantity)));
   box-sizing: border-box;
 }
 .buttonNav .round{

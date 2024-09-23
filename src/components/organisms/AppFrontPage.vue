@@ -39,7 +39,7 @@
 .c {
   display: flex;
   gap: 3px;
-  align-items: center;
+  margin: auto;
   font-size: 4rem;
 }
 .c p{
@@ -155,6 +155,28 @@
   }
   .content{
     text-align: left;
+  }
+}
+
+@media (max-width: 30.375rem){
+  .content .model{
+    background-size: auto 100%;
+  }
+  .AppSlider{
+    transform: perspective(31rem);
+  }
+  @keyframes infiniteRun {
+    from{
+      transform: perspective(100rem) rotateX(-12deg) rotateY(0);
+    }to{
+       transform: perspective(100rem) rotateX(-12deg) rotateY(360deg);
+     }
+  }
+  .item{
+    /* formula => (position - 1) * (360 deg / quantity)*/
+    transform:
+        rotateY(calc((var(--position) - 1) * 360 / var(--quantity) * 1deg))
+        translateZ(12rem);
   }
 }
 </style>

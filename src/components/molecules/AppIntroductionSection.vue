@@ -39,10 +39,6 @@ import AppRotateProjects from "@/components/organisms/AppCardSlider.vue";
     <AppRotateProjects>
     </AppRotateProjects>
   </div>
-
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
 </div>
 </template>
 
@@ -74,7 +70,7 @@ b {
  }
 .images > img{
   width: 40vw;
-  object-fit: cover;
+  object-fit: contain;
 }
 .images > img:first-child{
   transform:rotateZ(30deg);

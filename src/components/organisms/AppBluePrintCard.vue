@@ -50,6 +50,9 @@ defineProps({
     font-size: 0.8rem;
     background: v-bind(phoneGradient);
   }
+  .card .card-items h2{
+    font-size: 1.3rem;
+  }
 }
 
 
