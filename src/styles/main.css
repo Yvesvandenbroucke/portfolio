@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/fear-dynamic');
+/* Define basic global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    font-size: 2rem;
+    font-family: 'FEAR Dynamic', sans-serif;
+}
+html {
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-weight: 400;
+    line-height: 1.6;
+}
+p{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+main{
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #1e1f22;
+    --secondary-color: #939393;
+    --accent-color: #eaeaea;
+    --orange: var(--white);
+    --light-color: #e0e0e0;
+    --white: #fafafa;
+    --yellow-color: var(--white);
+    --pink-color: var(--white);
+    --shadow: #000000;
+    --light-orange-color: #dc7862;
+    --dark-blue: #112b74;
+    --light-purple: #9f61dc;
+    --luiknatie-rood: #490202;
+    --baby-blue: var(--white);
+    --briefcase-blue: #063755;
+}
+.card-items{
+    flex: 1;
+}
+
+.card .card-items h2, .card .card-items p, .card .appDisplay{
+    transform: translateY(2rem);
+    filter: blur(1rem);
+    opacity: 0;
+    animation: showContent 0.5s .7s ease-in-out 1 forwards;
+}
+@media (max-width: 30.375rem){
+    .card .card-items p{
+        font-size: 0.8rem;
+    }
+}
+.card .card-items h2{
+    animation-delay: 1s;
+}
+.card .appDisplay{
+    animation-delay: 1s;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.code-lang{
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+.code-lang p {
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-code-lang);
+    color: var(--color-code-lang);
+    padding: 0.2rem 0.5rem;
+    font-weight: bold;
+    background: transparent;
+}
+
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+.button-a{
+    display: inline;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background: linear-gradient(to left, var(--white) 50%, var(--primary-color) 50%) right;
+    background-size: 200% 100%;
+    border: 1px solid var(--white);
+    color: var(--primary-color);
+    transition: color 0.4s ease-in-out, background-position 0.6s ease-in-out ;
+}
+.button-a:hover{
+    cursor: pointer;
+    background-position: left;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
