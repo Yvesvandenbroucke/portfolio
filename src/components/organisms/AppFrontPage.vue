@@ -51,6 +51,7 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+  max-width: 80rem;
 }
 .AppSlider{
   position: absolute;
@@ -85,6 +86,7 @@
 }
 .content{
   position: absolute;
+  max-width: 80rem;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
