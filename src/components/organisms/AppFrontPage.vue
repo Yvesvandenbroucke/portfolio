@@ -159,6 +159,7 @@
 }
 
 @media (max-width: 30.375rem){
+
   .content .model{
     background-size: auto 100%;
   }

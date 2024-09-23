@@ -209,6 +209,13 @@ onMounted(() => {
   .appSlider{
     min-height: 45rem;
   }
+  .code-lang{
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .code-lang::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
 }
 
 </style>

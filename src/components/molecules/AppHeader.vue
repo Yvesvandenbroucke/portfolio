@@ -4,6 +4,13 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const activeItem = ref(null);
 const sections = ['Home', 'Intro', 'Traits', 'Crafts']; // Section IDs
 
+function isMobile() {
+  const remToPixels = 16;
+  const threshold = 34 * remToPixels;
+  const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  return screenWidth < threshold; // Return true if less than 34 rem
+}
 // Helper function to set active navbar item based on section ID
 const setActiveNavItem = (id) => {
   const list = document.querySelectorAll('.navbar-item');
@@ -20,7 +27,8 @@ const setActiveNavItem = (id) => {
 
       // Update translateX position
       const index = sections.indexOf(id);
-      const newTranslateX = index * (item.offsetWidth + 32); // Assuming 32px gap (2rem)
+      const gap = isMobile() ? 16: 32; //if mobile gap is 1rem otherwise 2rem
+      const newTranslateX = index * (item.offsetWidth + gap);
       document.querySelector('.navbar-list').style.setProperty('--translateX', `${newTranslateX}px`);
     }
   });
@@ -28,6 +36,7 @@ const setActiveNavItem = (id) => {
 
 // Intersection Observer Setup
 onMounted(() => {
+
   const observerOptions = {
     root: null,
     threshold: 0.5, // 50% of the section must be visible
@@ -72,7 +81,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .navbar-list{
   position: relative;
   border-radius: 0.5rem;
@@ -82,7 +90,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  background-color: rgba(250, 250, 250, 0.48);
+  background-color: rgba(208, 204, 204, 0.55);
 }
 .navbar-item a {
   display: flex;
@@ -127,6 +135,13 @@ onMounted(() => {
   text-align: center;
   justify-content: center;
   top: 0;
+}
+
+@media (max-width: 34rem) {
+
+  .navbar-list{
+    gap: 1rem
+  }
 }
 
 </style>

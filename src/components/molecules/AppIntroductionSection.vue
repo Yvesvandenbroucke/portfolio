@@ -2,18 +2,51 @@
 
 import AppAttrCard from "@/components/atoms/AppAttrCard.vue";
 import AppRotateProjects from "@/components/organisms/AppCardSlider.vue";
+
+
+import {onMounted} from 'vue';
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  // Check if any part of the element is visible
+  return (
+      rect.top < windowHeight && rect.bottom >= 0
+  );
+}
+
+function handleScroll() {
+  const items = document.querySelectorAll('.grid-item');
+  items.forEach(item => {
+  if (isElementInViewport(item)) {
+    item.classList.add('visible');
+  } else {
+    item.classList.remove('visible');
+    }
+  });
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
 </script>
 
+
 <template>
-<div class="grid">
-  <div class="images grid-item grid-item-1">
-    <img src="../../images/bright-dragonfly-with-neon-shades.png" alt="Bright dragonfly with neon shades">
-    <img src="../../images/bright-dragonfly-with-neon-shades.png" alt="Bright dragonfly with neon shades">
-  </div>
-  <div id="Intro" class="text grid-item grid-item-2">
-    <h2>Introduction</h2>
-    <p>I'm Yves Vanden Broucke, a passionate and recently graduated Full Stack Developer from Belgium. With a solid foundation in <b>Software & Web development</b> (graduating Cum Laude), I've honed my skills in <b> app development </b>, <b>frontend</b> and <b>backend</b> technologies through real-world projects. Whether collaborating on building mobile apps or fine-tuning user experiences,
-      I thrive in team environments and am committed to delivering top-quality solutions. Explore my work and see how I bring ideas to life through code!</p>
+  <div class="grid">
+    <div class="images grid-item grid-item-1">
+      <img src="../../images/bright-dragonfly-with-neon-shades.png" alt="Bright dragonfly with neon shades">
+      <img src="../../images/bright-dragonfly-with-neon-shades.png" alt="Bright dragonfly with neon shades">
+    </div>
+    <div id="Intro" class="text grid-item grid-item-2">
+      <h2>Introduction</h2>
+      <p>I'm Yves Vanden Broucke, a passionate and recently graduated Full Stack Developer from Belgium. With a solid
+        foundation in <b>Software & Web development</b> (graduating Cum Laude), I've honed my skills in <b> app
+          development </b>, <b>frontend</b> and <b>backend</b> technologies through real-world projects. Whether
+        collaborating on building mobile apps or fine-tuning user experiences,
+        I thrive in team environments and am committed to delivering top-quality solutions. Explore my work and see how I bring ideas to life through code!</p>
   </div>
   <div class="grid-item grid-item-3">
     <!--<img src="../../images/central-computer-processor-with-neon-lights-integrated-microchip-circuit-board-server.jpg" alt="Image by svstudioart on Freepik">-->
@@ -59,6 +92,13 @@ b {
   min-height: 10rem;
   position: relative;
   width: 100%;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.grid-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .grid-item-1{
   grid-column: 1 / 3 ;
@@ -162,6 +202,9 @@ b {
   .grid{
     display: flex;
     flex-direction: column;
+  }
+  #Intro h2{
+    text-align: start;
   }
   
 }

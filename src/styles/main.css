@@ -23,6 +23,13 @@ body {
     line-height: 1.6;
     max-width: 80rem;
     margin: 0 auto;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+main::-webkit-scrollbar{
+    display: none;
 }
 p{
     font-size: 0.9rem;
@@ -117,5 +124,8 @@ a{
 @media (max-width: 30.375rem){
     .card .card-items h2{
         font-size: 1.3rem;
+    }
+    h2{
+        font-size: 1.5rem;
     }
 }
