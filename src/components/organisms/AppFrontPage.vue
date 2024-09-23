@@ -40,6 +40,7 @@
   display: flex;
   gap: 3px;
   margin: auto;
+  align-items: center;
   font-size: 4rem;
 }
 .c p{
