@@ -29,7 +29,7 @@ defineProps({ icon: Array, title: String });
   color: var(--white);
   position: relative;
   overflow: hidden;
-  cursor: pointer
+
 }
 .card .front h2, .card .back h2{
   font-size: 100%;
