@@ -161,7 +161,8 @@ onMounted(() => {
 .arrows{
   position: absolute;
   inset: 0 0 0 0;
-  transform: translateY(50%);
+  top:50%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   z-index: 10;
