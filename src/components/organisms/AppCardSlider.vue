@@ -165,12 +165,13 @@ onMounted(() => {
   height: 3rem;
   display: flex;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
 }
 .arrows button{
   background-color: #eee5;
   border: none;
+  cursor: pointer;
   font-family: 'Poppins', sans-serif;
   color: var(--white);
   width: 2.5rem;
@@ -206,6 +207,7 @@ onMounted(() => {
   background-color: var(--white);
   scale: 1.05;
 }
+
 @media (max-width: 43.75rem){
   .appSlider{
     min-height: 45rem;

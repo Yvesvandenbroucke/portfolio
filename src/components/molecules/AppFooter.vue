@@ -19,20 +19,22 @@
     <div class="socials">
       <div class="social">
         <a aria-label="linkedIn link" href="https://www.linkedin.com/in/yves-vanden-broucke-93a56727b"> <font-awesome-icon :icon="['fab', 'linkedin']"></font-awesome-icon></a>
-        <span>LinkedIn</span>
+        <a aria-label="linkedIn link" href="https://www.linkedin.com/in/yves-vanden-broucke-93a56727b"> LinkedIn</a>
+
       </div>
       <div class="social">
         <a aria-label="instagram link" href="https://www.instagram.com/vandenbroucke_yves/"><font-awesome-icon :icon="['fab', 'instagram']"></font-awesome-icon></a>
-        <span>Instagram</span>
+        <a aria-label="instagram link" href="https://www.instagram.com/vandenbroucke_yves/"> Instagram</a>
+
       </div>
       <div class="social">
         <a  aria-label="facebook link"  href="https://www.facebook.com/yves.vandenbroucke.9">  <font-awesome-icon :icon="['fab', 'facebook']"></font-awesome-icon></a>
-        <span>Facebook</span>
+        <a  aria-label="facebook link"  href="https://www.facebook.com/yves.vandenbroucke.9"> Facebook</a>
       </div>
       <div class="social">
-      <a  aria-label="github link"  href="https://github.com/Yvesvandenbroucke">  <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon></a>
-      <span>Github</span>
-    </div>
+        <a  aria-label="github link"  href="https://github.com/Yvesvandenbroucke">  <font-awesome-icon :icon="['fab', 'github']"></font-awesome-icon></a>
+        <a  aria-label="github link"  href="https://github.com/Yvesvandenbroucke">  Github</a>
+      </div>
 
     </div>
 
@@ -69,9 +71,9 @@ footer > div{
   transition: all 0.3s ease-in-out;
 }
 .socials .social:hover {
-  width: 12.5rem;
+  width: 12rem;
 }
-.socials .social a{
+.socials .social a:first-child{
   display: inline-block;
   height: 3rem;
   width: 3rem;
@@ -82,27 +84,31 @@ footer > div{
   line-height: 3rem;
   font-size: 1.5rem;
 }
-.socials .social span{
+.socials .social a:nth-child(2){
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: start;
   line-height: 3rem;
-  margin-left: 0.8rem;
+
 }
-.socials .social:nth-child(1):hover span,
 .socials .social:nth-child(1):hover a{
   color: #0a65c0;
 }
-.socials .social:nth-child(2):hover span,
+.socials .social:nth-child(1):hover{
+  width: 10rem;
+}
+
 .socials .social:nth-child(2):hover a{
   color: #c33588;
 }
-.socials .social:nth-child(3):hover span,
 .socials .social:nth-child(3):hover a{
   color: #0865fd;
 }
-.socials .social:nth-child(4):hover span,
 .socials .social:nth-child(4):hover a{
   color: #55237f;
+}
+.socials .social:nth-child(4):hover{
+  width: 9rem;
 }
 @media (max-width: 34.375rem) {
   footer{
