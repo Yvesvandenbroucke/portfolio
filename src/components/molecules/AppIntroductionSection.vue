@@ -57,7 +57,7 @@ onMounted(() => {
   </div>
   <div id="Traits" class="grid-item grid-item-5">
     <div class="grid2">
-      <app-attr-card :icon="['far', 'face-grin-beam']" title="Outgoing">I'm highly social and thrive in collaborative environments, always ready to assist my team. Strong interpersonal skills help me communicate effectively and build positive relationships.</app-attr-card>
+      <app-attr-card :icon="['far', 'face-grin-beam']" title="outgoing">I'm highly social and thrive in collaborative environments, always ready to assist my team. Strong interpersonal skills help me communicate effectively and build positive relationships.</app-attr-card>
       <app-attr-card :icon="['fas', 'crown']" title="Responsible">Responsible and reliable, I take ownership of tasks and confidently step up to challenges, ensuring outcomes are met with integrity and focus</app-attr-card>
       <app-attr-card :icon="['fas', 'code']" title="Curious"> I am dedicated to continuous learning and growth. I eagerly embrace new challenges and opportunities to expand my knowledge, always striving to improve and adapt.</app-attr-card>
       <app-attr-card :icon="['fas', 'star']" title="Meticulous">I am dedicated to achieving perfection in every project, focusing on high-quality results and attention to detail to ensure the best outcome.</app-attr-card>
